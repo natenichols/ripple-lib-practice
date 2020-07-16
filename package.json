@@ -1,0 +1,9 @@
+{
+  "name": "ripple-lib-dir",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ripple-lib": "^1.8.0"
+  }
+}
