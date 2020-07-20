@@ -17,14 +17,13 @@ api.on('disconnected', (code) => {
 
 api.connect().then(() => {
   // 'transaction' can be replaced with the relevant `type` from the table above
-  api.connection.on('ledgerClosed', (event) => {
-
+  api.connection.on('validationReceived', (event) => {
       // Do something useful with `event`
       console.log(JSON.stringify(event, null, 2))
   })
 
   api.request('subscribe', {
-      streams: [ "ledgerClosed" ]
+      streams: [ "validations" ]
   }).then(response => {
       console.log('Successfully subscribed')
   }).catch(error => {
